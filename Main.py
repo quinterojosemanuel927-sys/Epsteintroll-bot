@@ -21,7 +21,7 @@ async def epstein(interaction: discord.Interaction):
         description="Haz clic para ver el vídeo completo 👇\n(Cuidado...)",
         color=0x000000
     )
-    embed.set_image(url="https://abc7.com/amp/post/congreso-aprueba-divulgar-archivos-de-jeffrey-epstein/18171112/")  # ← Cambia esta línea por URL directa de imagen
+    embed.set_image(url="https://cdn.abcotvs.com/dip/images/18170915_111825-wabc-epstein-img.jpg")  # ← Cambia esta línea por URL directa de imagen
 
     view = discord.ui.View()
     button = discord.ui.Button(label="Ver el vídeo", style=discord.ButtonStyle.red, url=tracker_url)
